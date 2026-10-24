@@ -1,0 +1,27 @@
+# Keil/C51 generated files and per-user settings
+**/Objects/
+**/Listings/
+*.obj
+*.hex
+*.lst
+*.m51
+*.lnp
+*.__i
+*.uvgui.*
+*.uvguix.*
+*.uvopt
+*.uvoptx
+*.bak
+*.plg
+*.iex
+*.build_log.htm
+
+# Locally retained installers, drivers, and compressed bundles
+/Keil5 C51（软件资料）/
+*.exe
+*.sys
+*.inf
+*.rar
+*.zip
+*.7z
+*.z

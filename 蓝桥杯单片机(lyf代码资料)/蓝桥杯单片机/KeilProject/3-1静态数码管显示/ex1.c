@@ -1,0 +1,27 @@
+#include <STC15F2K60S2.H>
+#include "CBuzz.h"
+#include "CLED.h"
+
+unsigned char Bit_Selection[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+unsigned char Segment_Selection[]={0xFE,0xFD,0xFB,0xF7,0xEF,0xDF,0xBF,0x7F};
+void Nixie(unsigned char Seg,Bit)
+{
+	Seg--;
+	P2&=0x1f;
+	P2|=0xc0;
+	P0=~Segment_Selection[Seg];  
+	P2&=0x1f;
+	
+	P2&=0x1f;
+	P2|=0xe0;
+	P0=~Bit_Selection[Bit];  
+	P2&=0x1f;
+}
+
+void main()
+{
+	Buzz_Close();
+	LED_Close();
+	Nixie(8,1);
+	while(1);
+}
